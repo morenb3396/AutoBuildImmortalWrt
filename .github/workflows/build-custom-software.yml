@@ -1,0 +1,150 @@
+name: 自选软件构建 ImmortalWrt
+run-name: ${{ inputs.device }} · ImmortalWrt ${{ inputs.version }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: 路由器机型
+        type: choice
+        required: true
+        default: NanoPi R5S
+        options:
+          - NanoPi R5S
+          - NanoPi R4S
+          - x86-64 软路由
+          - ariaboard_photonicat
+          - armsom_sige3
+          - armsom_sige7
+          - cyber_cyber3588-aib
+          - ezpro_mrkaio-m68s
+          - firefly_roc-rk3328-cc
+          - firefly_roc-rk3568-pc
+          - friendlyarm_nanopc-t4
+          - friendlyarm_nanopc-t6
+          - friendlyarm_nanopi-r2c
+          - friendlyarm_nanopi-r2c-plus
+          - friendlyarm_nanopi-r2s
+          - friendlyarm_nanopi-r3s
+          - friendlyarm_nanopi-r4se
+          - friendlyarm_nanopi-r4s-enterprise
+          - friendlyarm_nanopi-r5c
+          - friendlyarm_nanopi-r6c
+          - friendlyarm_nanopi-r6s
+          - huake_guangmiao-g4c
+          - lunzn_fastrhino-r66s
+          - lunzn_fastrhino-r68s
+          - lyt_t68m
+          - pine64_rock64
+          - pine64_rockpro64
+          - radxa_cm3_io
+          - radxa_e25
+          - radxa_rock-3a
+          - radxa_rock-3b
+          - radxa_rock-3c
+          - radxa_rock-5a
+          - radxa_rock-5b
+          - radxa_rock-pi-4a
+          - radxa_rock-pi-e
+          - radxa_rock-pi-s
+          - radxa_zero-3e
+          - radxa_zero-3w
+          - sinovoip_bpi-r2-pro
+          - xunlong_orangepi-5
+          - xunlong_orangepi-5-plus
+          - xunlong_orangepi-r1-plus
+          - xunlong_orangepi-r1-plus-lts
+          - 其他机型
+      version:
+        description: 官方稳定版版本号（例如 25.12.2）
+        type: string
+        required: true
+        default: '25.12.2'
+      custom_target:
+        description: 其他机型的平台，例如 mediatek/filogic；预设机型留空
+        type: string
+        required: false
+      custom_profile:
+        description: 其他机型的 profile ID；预设机型留空
+        type: string
+        required: false
+      rootfs_size:
+        description: 根分区大小 MB（可选）；留空保留官方大小
+        type: string
+        required: false
+      openclash:
+        description: 添加 OpenClash 和所需依赖
+        type: boolean
+        required: true
+        default: true
+      ddns_go:
+        description: 添加 DDNS-Go 和中文设置页
+        type: boolean
+        required: true
+        default: true
+      upnp:
+        description: 添加 UPnP 和中文设置页
+        type: boolean
+        required: true
+        default: true
+      argon:
+        description: 添加 Argon 和中文设置页，首次启动自动使用
+        type: boolean
+        required: true
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: 读取仓库文件
+        uses: actions/checkout@v7
+
+      - name: 安装构建环境
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential libncurses-dev libncursesw5-dev zlib1g-dev \
+            gawk gettext git curl ca-certificates file unzip \
+            python3 python3-setuptools rsync wget xz-utils zstd \
+            libssl-dev libelf-dev swig time
+
+      - name: 自动加入软件包并生成固件
+        env:
+          DEVICE: ${{ inputs.device }}
+          VERSION: ${{ inputs.version }}
+          CUSTOM_TARGET: ${{ inputs.custom_target }}
+          CUSTOM_PROFILE: ${{ inputs.custom_profile }}
+          ROOTFS_SIZE: ${{ inputs.rootfs_size }}
+          ADD_OPENCLASH: ${{ inputs.openclash }}
+          ADD_DDNS_GO: ${{ inputs.ddns_go }}
+          ADD_UPNP: ${{ inputs.upnp }}
+          ADD_ARGON: ${{ inputs.argon }}
+        run: python3 custom-builder/scripts/build.py
+
+      - name: 下载固件与清单
+        if: success()
+        uses: actions/upload-artifact@v7
+        with:
+          name: firmware-${{ inputs.version }}-${{ github.run_id }}
+          path: custom-builder/build/output/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+      - name: 保存构建日志
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-log-${{ github.run_id }}
+          path: |
+            custom-builder/build/build.log
+            custom-builder/build/build-plan.json
+            custom-builder/build/selected-packages.txt
+            custom-builder/build/official-profiles.json
+          if-no-files-found: ignore
+          retention-days: 14

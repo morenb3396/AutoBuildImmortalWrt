@@ -1,0 +1,18 @@
+# 勾选 OpenClash 时才替换精简工具，避免冲突。
+-dnsmasq
+-ip-tiny
+luci-app-openclash
+luci-compat
+dnsmasq-full
+bash
+curl
+ca-bundle
+ip-full
+ruby
+ruby-yaml
+ruby-psych
+ruby-pstore
+kmod-inet-diag
+kmod-nft-tproxy
+kmod-tun
+unzip

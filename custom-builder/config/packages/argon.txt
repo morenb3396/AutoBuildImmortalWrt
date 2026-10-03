@@ -1,0 +1,6 @@
+luci-theme-argon
+luci-app-argon-config
+luci-i18n-argon-config-zh-cn
+luci-i18n-base-zh-cn
+wget-ssl
+jsonfilter

@@ -1,0 +1,31 @@
+name: 校验自选软件工作流
+
+on:
+  push:
+    paths:
+      - 'custom-builder/**'
+      - '.github/workflows/build-custom-software.yml'
+      - '.github/workflows/check-custom-software.yml'
+  pull_request:
+    paths:
+      - 'custom-builder/**'
+      - '.github/workflows/build-custom-software.yml'
+      - '.github/workflows/check-custom-software.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: 读取仓库文件
+        uses: actions/checkout@v7
+      - name: 安装配置校验工具
+        run: python3 -m pip install --disable-pip-version-check 'PyYAML>=6,<7'
+      - name: 检查勾选组合、机型映射和构建流程
+        run: |
+          python3 -m unittest discover -s custom-builder/tests -v
+          python3 -m py_compile custom-builder/scripts/build.py

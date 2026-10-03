@@ -1,4 +1,11 @@
 # AutoBuildImmortalWrt
+
+## 自选软件构建
+
+进入 [Actions → 自选软件构建 ImmortalWrt](https://github.com/morenb3396/AutoBuildImmortalWrt/actions/workflows/build-custom-software.yml)，选择机型和版本，再分别勾选 **OpenClash、DDNS-Go、UPnP（中文）、Argon（中文）**。只追加勾选的软件和依赖，官方默认软件包与机型驱动自动保留。支持 `24.10.x` 与 `25.12.x` 稳定版；成功后从本次运行的 **Artifacts** 下载固件。
+
+使用细节见 [自选软件构建说明](custom-builder/README.md)。
+
 [![GitHub](https://img.shields.io/github/license/wukongdaily/AutoBuildImmortalWrt.svg?label=LICENSE&logo=github&logoColor=%20)](https://github.com/wukongdaily/AutoBuildImmortalWrt/blob/master/LICENSE)
 ![GitHub Stars](https://img.shields.io/github/stars/wukongdaily/AutoBuildImmortalWrt.svg?style=flat&logo=appveyor&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/wukongdaily/AutoBuildImmortalWrt.svg?style=flat&logo=appveyor&label=Forks&logo=github) [![Github](https://img.shields.io/badge/RELEASE:AutoBuildImmortalWrt-123456?logo=github&logoColor=fff&labelColor=green&style=flat)](https://github.com/wukongdaily/AutoBuildImmortalWrt/releases) [![Bilibili](https://img.shields.io/badge/Bilibili-123456?logo=bilibili&logoColor=fff&labelColor=fb7299)](https://www.bilibili.com/video/BV1EG6VYCER3) [![操作步骤](https://img.shields.io/badge/YouTube-123456?logo=youtube&labelColor=ff0000)](https://youtu.be/xIVtUwZR6U0)
@@ -114,3 +121,4 @@ https://wkdaily.cpolar.cn/15
 - https://github.com/sirpdboy/luci-theme-kucat
 - https://github.com/AdguardTeam/AdGuardHome
 - https://github.com/kiddin9/kwrt-packages
+

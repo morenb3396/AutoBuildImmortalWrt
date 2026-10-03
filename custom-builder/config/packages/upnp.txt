@@ -1,0 +1,4 @@
+luci-app-upnp
+luci-i18n-upnp-zh-cn
+miniupnpd-nftables
+rpcd-mod-ucode

@@ -1,0 +1,4 @@
+luci-app-ddns-go
+luci-i18n-ddns-go-zh-cn
+ddns-go
+ca-bundle

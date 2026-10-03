@@ -1,0 +1,178 @@
+{
+  "NanoPi R5S": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r5s"
+  },
+  "NanoPi R4S": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r4s"
+  },
+  "x86-64 软路由": {
+    "target": "x86/64",
+    "profile": "generic"
+  },
+  "ariaboard_photonicat": {
+    "target": "rockchip/armv8",
+    "profile": "ariaboard_photonicat"
+  },
+  "armsom_sige3": {
+    "target": "rockchip/armv8",
+    "profile": "armsom_sige3"
+  },
+  "armsom_sige7": {
+    "target": "rockchip/armv8",
+    "profile": "armsom_sige7"
+  },
+  "cyber_cyber3588-aib": {
+    "target": "rockchip/armv8",
+    "profile": "cyber_cyber3588-aib"
+  },
+  "ezpro_mrkaio-m68s": {
+    "target": "rockchip/armv8",
+    "profile": "ezpro_mrkaio-m68s"
+  },
+  "firefly_roc-rk3328-cc": {
+    "target": "rockchip/armv8",
+    "profile": "firefly_roc-rk3328-cc"
+  },
+  "firefly_roc-rk3568-pc": {
+    "target": "rockchip/armv8",
+    "profile": "firefly_roc-rk3568-pc"
+  },
+  "friendlyarm_nanopc-t4": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopc-t4"
+  },
+  "friendlyarm_nanopc-t6": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopc-t6"
+  },
+  "friendlyarm_nanopi-r2c": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r2c"
+  },
+  "friendlyarm_nanopi-r2c-plus": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r2c-plus"
+  },
+  "friendlyarm_nanopi-r2s": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r2s"
+  },
+  "friendlyarm_nanopi-r3s": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r3s"
+  },
+  "friendlyarm_nanopi-r4se": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r4se"
+  },
+  "friendlyarm_nanopi-r4s-enterprise": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r4s-enterprise"
+  },
+  "friendlyarm_nanopi-r5c": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r5c"
+  },
+  "friendlyarm_nanopi-r6c": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r6c"
+  },
+  "friendlyarm_nanopi-r6s": {
+    "target": "rockchip/armv8",
+    "profile": "friendlyarm_nanopi-r6s"
+  },
+  "huake_guangmiao-g4c": {
+    "target": "rockchip/armv8",
+    "profile": "huake_guangmiao-g4c"
+  },
+  "lunzn_fastrhino-r66s": {
+    "target": "rockchip/armv8",
+    "profile": "lunzn_fastrhino-r66s"
+  },
+  "lunzn_fastrhino-r68s": {
+    "target": "rockchip/armv8",
+    "profile": "lunzn_fastrhino-r68s"
+  },
+  "lyt_t68m": {
+    "target": "rockchip/armv8",
+    "profile": "lyt_t68m"
+  },
+  "pine64_rock64": {
+    "target": "rockchip/armv8",
+    "profile": "pine64_rock64"
+  },
+  "pine64_rockpro64": {
+    "target": "rockchip/armv8",
+    "profile": "pine64_rockpro64"
+  },
+  "radxa_cm3_io": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_cm3_io"
+  },
+  "radxa_e25": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_e25"
+  },
+  "radxa_rock-3a": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-3a"
+  },
+  "radxa_rock-3b": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-3b"
+  },
+  "radxa_rock-3c": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-3c"
+  },
+  "radxa_rock-5a": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-5a"
+  },
+  "radxa_rock-5b": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-5b"
+  },
+  "radxa_rock-pi-4a": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-pi-4a"
+  },
+  "radxa_rock-pi-e": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-pi-e"
+  },
+  "radxa_rock-pi-s": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_rock-pi-s"
+  },
+  "radxa_zero-3e": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_zero-3e"
+  },
+  "radxa_zero-3w": {
+    "target": "rockchip/armv8",
+    "profile": "radxa_zero-3w"
+  },
+  "sinovoip_bpi-r2-pro": {
+    "target": "rockchip/armv8",
+    "profile": "sinovoip_bpi-r2-pro"
+  },
+  "xunlong_orangepi-5": {
+    "target": "rockchip/armv8",
+    "profile": "xunlong_orangepi-5"
+  },
+  "xunlong_orangepi-5-plus": {
+    "target": "rockchip/armv8",
+    "profile": "xunlong_orangepi-5-plus"
+  },
+  "xunlong_orangepi-r1-plus": {
+    "target": "rockchip/armv8",
+    "profile": "xunlong_orangepi-r1-plus"
+  },
+  "xunlong_orangepi-r1-plus-lts": {
+    "target": "rockchip/armv8",
+    "profile": "xunlong_orangepi-r1-plus-lts"
+  }
+}
