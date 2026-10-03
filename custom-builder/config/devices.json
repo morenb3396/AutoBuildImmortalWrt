@@ -107,9 +107,9 @@
     "target": "rockchip/armv8",
     "profile": "pine64_rockpro64"
   },
-  "radxa_cm3_io": {
+  "radxa_cm3-io": {
     "target": "rockchip/armv8",
-    "profile": "radxa_cm3_io"
+    "profile": "radxa_cm3-io"
   },
   "radxa_e25": {
     "target": "rockchip/armv8",

@@ -19,8 +19,10 @@ class BuilderTests(unittest.TestCase):
     def test_machine_selection_only_sets_official_target_and_profile(self):
         r5s = build.resolve_settings({"DEVICE": "NanoPi R5S"}, self.devices)
         r4s = build.resolve_settings({"DEVICE": "NanoPi R4S"}, self.devices)
+        cm3 = build.resolve_settings({"DEVICE": "radxa_cm3-io"}, self.devices)
         self.assertEqual(r5s["profile"], "friendlyarm_nanopi-r5s")
         self.assertEqual(r4s["profile"], "friendlyarm_nanopi-r4s")
+        self.assertEqual(cm3["profile"], "radxa_cm3-io")
         self.assertNotIn("kmod-r8125", build.selected_packages(r5s))
         self.assertNotIn("kmod-r8125", build.selected_packages(r4s))
         self.assertIsNone(r5s["rootfs_size"])
